@@ -7,14 +7,16 @@ GSD-Net is a medical image segmentation framework suitable for noisy annotations
 # Usage 
 ## Prepared data and Preprocess
 To preprocess your datasets to generate simulated label noise, 
-please refer ./scripts/README.md and use ./scripts/generate_simulated_noise.py
+Please refer ./scripts/README.md and use ./scripts/generate_simulated_noise.py
 ### For generate superpixel Structural prior via SLIC,
-please refer ./scripts/README.md and use ./scripts/generate_SLIC.py
+Please refer ./scripts/README.md and use ./scripts/generate_SLIC.py
 
 ## Train model with noisy label using GSD-Net training
 ### Data prepare
 Download the data from  [**[Google Drive]**](https://drive.google.com/file/d/10y0iXTcaN9lvYuR_DZB7JTVloqzpBvhJ/view?usp=sharing)
 and unzip the data.zip
+
+The ground truth for BUSUC dataset is derived from [**[Ahmed Iqbal et al.]**](https://www.kaggle.com/datasets/orvile/bus-uc-breast-ultrasound) 
 
 Data Architecture:
 ```
@@ -36,7 +38,7 @@ Data Architecture:
 ```
 For our used Kvasir, Shenzhen, BU_SUC dataset:
 ```
-bash train.sh
+sh train.sh
 ```
 For training via multi-expert dataset (e.g. LIDC dataset and MMIS-2024 dataset)
 
