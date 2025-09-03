@@ -1,5 +1,5 @@
 # From Noisy Labels to Intrinsic Structure: A Geometric-Structural Dual-Guided Framework for Noise-Robust Medical Image Segmentation
-GSD-Net is a medical image segmentation framework suitable for noisy annotations, aiming to overcome the impact of noisy annotations.
+GSD-Net is a noise-robust medical image segmentation framework that mitigates the adverse effects of imperfect annotations.
 
 [**[arXiv, 2025]**](https://arxiv.org/abs/2509.02419)
 
