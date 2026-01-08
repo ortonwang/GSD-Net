@@ -1,7 +1,7 @@
 # For generete simulated noise
 ## use generate_simulated_noise.py scripts
-### Attention:
-### Require: make sure channels for clean ground truth is 1 channel
+
+### Require: make sure channels for clean ground truth is 1 channel (Attention)
 ### Usage:
 
 Our noise simulated code is based on the [SpatialCorrection](https://github.com/michaelofsbu/SpatialCorrection)
@@ -26,7 +26,7 @@ For our study, the hyperparameters used for simulated noisy labels are shown in 
 | S_DE          | K(9-11)          | K(9-11)          | K(9-11)          | K(2-4)          |
 
 **Notes:**  
-- `M(T,P,V)`: Markov-based boundary perturbation strategy, with parameters T = step number, P = Bernoulli preference, V = Bernoulli variance.  
+- `M(T,theta1,theta2)`: Markov-based boundary perturbation strategy, with parameters T = Markov process step number, theta1 = Bernoulli preference, theta2 = Bernoulli variance.  
 - `K(k1 - k2)`: Morphology-based erosion/dilation kernel, randomly varying between k1 and k2 for each sample.
 
 
