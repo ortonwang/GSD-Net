@@ -27,7 +27,7 @@ python generate_simulated_noise.py \
 Here, --T represent the Markov process step number, 
       --theta1 represent the Bernoulli parameter controlling preference,
       --theta2 represent the Bernoulli parameter controlling preference.
-For our study, the hyperparameters used for simulated noisy labels are shown in Table X. 
+For our study, the hyperparameters used for simulated noisy labels are shown in the following Table. 
 | Noise Setting | Kvasir             | Shenzhen           | BU_SUC             | BraTS2019        |
 |---------------|------------------|------------------|------------------|----------------|
 | S_R           | M(200,0.8,0.05)  | M(200,0.8,0.05)  | M(200,0.8,0.05)  | M(200,0.8,0.05) |
