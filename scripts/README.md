@@ -6,19 +6,19 @@
 
 Our noise simulated code is based on the [SpatialCorrection](https://github.com/michaelofsbu/SpatialCorrection)
 ```
-# For S<sub>R simulated noise:
+# For S_R simulated noise:
 python generate_simulated_noise.py \
 --gts_root "Directory root of groundtruth masks" \
 --save_root "Directory root for saving generated noisy masks" \
 --T 200 --theta1 0.8  --theta2 0.05
 
-# For S<sub>E simulated noise:
+# For S_E simulated noise:
 python generate_simulated_noise.py \
 --gts_root "Directory root of groundtruth masks" \
 --save_root "Directory root for saving generated noisy masks" \
 --T 200 --theta1 0.2 --theta2 0.05
 
-# For S<sub>DE simulated noise:
+# For S_DE simulated noise:
 python generate_simulated_noise.py \
 --gts_root "Directory root of groundtruth masks" \
 --save_root "Directory root for saving generated noisy masks" \
@@ -30,9 +30,9 @@ Here, --T represent the Markov process step number,
 For our study, the hyperparameters used for simulated noisy labels are shown in Table X. 
 | Noise Setting | Kvasir             | Shenzhen           | BU_SUC             | BraTS2019        |
 |---------------|------------------|------------------|------------------|----------------|
-| S<sub>R           | M(200,0.8,0.05)  | M(200,0.8,0.05)  | M(200,0.8,0.05)  | M(200,0.8,0.05) |
-| S<sub>E           | M(200,0.2,0.05)  | M(200,0.2,0.05)  | M(200,0.2,0.05)  | M(50,0.4,0.05)  |
-| S<sub>DE          | K(9-11)          | K(9-11)          | K(9-11)          | K(2-4)          |
+| S_R           | M(200,0.8,0.05)  | M(200,0.8,0.05)  | M(200,0.8,0.05)  | M(200,0.8,0.05) |
+| S_E           | M(200,0.2,0.05)  | M(200,0.2,0.05)  | M(200,0.2,0.05)  | M(50,0.4,0.05)  |
+| S_DE          | K(9-11)          | K(9-11)          | K(9-11)          | K(2-4)          |
 
 **Notes:**  
 - `M(T,theta1,theta2)`: Markov-based boundary perturbation strategy, with parameters T = Markov process step number, theta1 = Bernoulli preference, theta2 = Bernoulli variance.  
