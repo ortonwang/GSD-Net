@@ -12,7 +12,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-from utils.used_function import assign_superpixel_label_refine, kl_loss_compute
+from utils.used_function import assign_superpixel_label_refine, kl_loss_compute,assign_superpixel_label_refine
 from dataloaders.base_dataset import train_dataset,train_transform,test_transform,train_dataset_noread_distance_jit_SLIC
 
 import warnings
@@ -146,6 +146,7 @@ def train(args, snapshot_path):
 
                 masks_generated = torch.zeros_like(label_batch)
                 for idxx in range(batch_size):
+                    # you can switch the following function to "assign_superpixel_label_small_loss" for speed up
                     generated_mask_i = assign_superpixel_label_refine(score=outputs_soft[idxx,::], segments=img_SLIC[idxx,::], threshold=0.5)
                     masks_generated[idxx,::] = generated_mask_i
 
@@ -268,3 +269,4 @@ if __name__ == "__main__":
     snapshot_path = "./model/{}".format(args.datasets + args.exp + args.noise_type)
     os.makedirs(snapshot_path,exist_ok=True)
     train(args, snapshot_path)
+
