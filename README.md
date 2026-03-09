@@ -60,8 +60,9 @@ python GSD_Net_MMIS2024_each_select1.py
    
 ## About drop rate tau selection commonly exist in the small loss criterion stragy
 1. using "code_for_searching_drop_out_rate.py"
-#use demo
+# use demo
 # For MMIS-2024 dataset 
+```
 bash search_drop_out_rate.sh
 ```
 After searching finished, use the "generate_curve_from_tau_searching.py" script to generate intuitive visualization
