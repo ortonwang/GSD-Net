@@ -49,3 +49,21 @@ def assign_superpixel_label_refine(score, segments,threshold=0.5):
         else: label=2  # param is 0.5, therefore label=2 is not used as ratio range from 0-1
         label_map += mask_in_seg * label
     return  torch.from_numpy(label_map).cuda()
+
+def assign_superpixel_label_small_loss(score, segments, small_loss_mask, ori_gt, threshold=0.8):
+    # score: [C, H, W]，
+    score_positive = score[1].detach().cpu().numpy()
+    segments = segments.detach().cpu().numpy().astype(np.int64)
+    H, W = segments.shape
+    flat_segments = segments.reshape(-1)
+    flat_scores = score_positive.reshape(-1)
+    num_segments = flat_segments.max() + 1
+    seg_area = np.bincount(flat_segments, minlength=num_segments)
+    seg_score_sum = np.bincount(flat_segments, weights=flat_scores, minlength=num_segments)
+    ratio = seg_score_sum / (seg_area + 1e-8)
+    seg_labels = np.full(num_segments, 2, dtype=np.int64)
+    seg_labels[ratio >= threshold] = 1
+    seg_labels[ratio <= 1 - threshold] = 0
+    label_map = seg_labels[segments]
+
+    return torch.from_numpy(label_map).cuda()
