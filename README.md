@@ -62,9 +62,11 @@ python GSD_Net_MMIS2024_each_select1.py
 1. using "code_for_searching_drop_out_rate.py"
 # use demo
 # For MMIS-2024 dataset 
+
 ```
 bash search_drop_out_rate.sh
 ```
+
 After searching finished, use the "generate_curve_from_tau_searching.py" script to generate intuitive visualization
 
 ## Acknowledgements
