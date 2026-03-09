@@ -57,6 +57,14 @@ python GSD_Net_MMIS2024_each_select1.py
 1. generate super-pixel Structural prior via ./scripts/generate_SLIC.py 
 2. enter train_GSD-Net.py, function "data_path" in line 46, Set the folder path corresponding to the dataset
 3. python train_GSD-Net.py
+   
+## About drop rate tau selection commonly exist in the small loss criterion stragy
+1. using "code_for_searching_drop_out_rate.py"
+#use demo
+# For MMIS-2024 dataset 
+bash search_drop_out_rate.sh
+```
+After searching finished, use the "generate_curve_from_tau_searching.py" script to generate intuitive visualization
 
 ## Acknowledgements
 Part of our code is adapted from [**[D-persona]**](https://github.com/ycwu1997/D-Persona)
