@@ -59,8 +59,7 @@ python GSD_Net_MMIS2024_each_select1.py
 3. python train_GSD-Net.py
    
 ## About drop rate tau selection commonly exist in the small loss criterion stragy
-using "code_for_searching_drop_out_rate.py"
-# use demo
+using "code_for_searching_drop_out_rate.py", with the demo provided in the script below:
 
 ```
 bash search_drop_out_rate.sh
